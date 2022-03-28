@@ -12,6 +12,7 @@
 
 :root {
   --border-bottom: 1px solid rgb(246, 246, 246);
+  /* --border-bottomm: black; */
   --grey: rgb(246, 246, 246);
 }
 
@@ -93,11 +94,17 @@
 .clear {
   text-align: center;
   padding: 1.1rem;
+  background-color: var(--grey);
+}
+
+.clear-link {
+  color: grey;
 }
 
 .clear-link:hover {
   text-decoration: underline;
-  font-weight: bolder;
+  color: black;
+  cursor: pointer;
 }
 
 .clear-link:visited {
