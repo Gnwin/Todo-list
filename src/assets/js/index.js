@@ -1,6 +1,6 @@
 // import _ from 'lodash'
-import './assets/stylesheets/reset.css';
-import './assets/stylesheets/style.css';
+import '../stylesheets/reset.css';
+import '../stylesheets/style.css';
 
 // function component() {
 //   const element = document.createElement('div');
@@ -13,3 +13,6 @@ import './assets/stylesheets/style.css';
 // }
 
 // document.body.appendChild(component());
+
+
+
