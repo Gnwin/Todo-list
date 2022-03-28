@@ -13,6 +13,3 @@ import '../stylesheets/style.css';
 // }
 
 // document.body.appendChild(component());
-
-
-

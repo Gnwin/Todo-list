@@ -10,6 +10,11 @@
 
 /** GENERAL **/
 
+:root {
+  --border-bottom: 1px solid rgb(246, 246, 246);
+  --grey: rgb(246, 246, 246);
+}
+
 /* Mobile View */
 
 .html {
@@ -19,10 +24,7 @@
 }
 
 .body {
-  /* background-color: white; */
   position: relative;
-  margin: 0;
-  padding: 0;
 }
 
 .offscreen {
@@ -37,11 +39,28 @@
 }
 
 /** header **/
-h1 {
-  color: red;
-}
 
 /* Main Content */
+.space {
+  border-bottom: var(--border-bottom);
+  padding: 1rem;
+}
+
+.main {}
+
+.todo {
+  background-color: var(--grey);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  background-color: white;
+  max-width: 500px;
+  width: 80%;
+}
 
 /* Footer */
 
