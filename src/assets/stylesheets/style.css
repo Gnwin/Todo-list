@@ -1,0 +1,56 @@
+/*** Project Meta ***/
+
+/* general - line 13 */
+
+/* header - line 39 */
+
+/* main content - line 138 */
+
+/* footer - line 866 */
+
+/** GENERAL **/
+
+/* Mobile View */
+
+.html {
+  /* font-family: ARS Maquette, Helvetica Neue, Arial, sans-serif; */
+  font-size: 87.5%;
+  scroll-behavior: smooth;
+}
+
+.body {
+  /* background-color: white; */
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/** header **/
+h1 {
+  color: red;
+}
+
+/* Main Content */
+
+/* Footer */
+
+/* @media screen and (max-width: 767px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 769px) {}
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {} */
