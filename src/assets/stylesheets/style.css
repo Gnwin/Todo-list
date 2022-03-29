@@ -72,9 +72,10 @@
 
 .input:focus {
   border: none;
+  outline: none;
 }
 
-.input[type="text"] {}
+/* .input[type="text"] {} */
 
 .input[type="checkbox"] {
   width: 1.1rem;
@@ -88,6 +89,12 @@
 .list-title {
   width: 100%;
   /* padding: 0 0.5rem; */
+  margin: 0 0.8rem;
+}
+
+.list-title:focus {
+  outline: none;
+  background-color: palegoldenrod;
   margin: 0 0.8rem;
 }
 
