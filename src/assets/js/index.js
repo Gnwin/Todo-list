@@ -9,13 +9,10 @@ import displayTodos from './modules/DisplayTodos.js'
 let todos;
 if (localStorage.length !== 0) {
   const b = JSON.parse(localStorage.getItem('todos'));
-  console.log(b);
   todos = new TodoItems(b);
-  console.log(todos);
 } else {
   todos = new TodoItems([]);
   localStorage.setItem('todos', JSON.stringify(todos.todoitems));
-  console.log(todos);
 }
 
 let addtodoarrow = document.querySelector('.addtodoarrow');
