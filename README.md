@@ -15,7 +15,7 @@
 
 ## Live site 🚀
 
-🔗 [Live Site Link](https://dewslyse.github.io/mv-to-do-list/)
+🔗 [Live Site Link](https://gnwin.github.io/Todo-list/src/index.html)
 
 ## Getting Started
 
