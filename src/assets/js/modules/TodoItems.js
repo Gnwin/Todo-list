@@ -1,22 +1,20 @@
-import displayTodos from './DisplayTodos.js'
+import displayTodos from './DisplayTodos';
 
 class TodoItems {
-  constructor (todolist) {
+  constructor(todolist) {
     this.todoitems = todolist;
   }
 
   static addtodo(todoobj) {
     const todosArr = JSON.parse(localStorage.getItem('todos'));
-    console.log(todosArr);
     todosArr.push(todoobj);
     this.todoitems = todoobj;
-    console.log(this.todoitems);
-    localStorage.setItem('todos', JSON.stringify(todosArr))
+    localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;
-    displayTodos.display()
+    displayTodos.display();
   }
 
-  static deletetodo(){}
+  static deletetodo() {}
 }
 
-export default TodoItems
+export default TodoItems;

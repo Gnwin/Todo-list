@@ -1,5 +1,4 @@
-import todomarkup from './TodoMarkup.js';
-
+import todomarkup from './TodoMarkup';
 
 class DisplayTodos {
   // eslint-disable-next-line class-methods-use-this

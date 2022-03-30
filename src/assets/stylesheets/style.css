@@ -98,15 +98,11 @@
 
 .todoinput::placeholder {
   font-style: italic;
-} 
+}
 
 .input[type="checkbox"] {
   width: 1.1rem;
   height: 1.1rem;
-}
-
-.input[type="checkbox"]:checked {
-  background-color: none;
 }
 
 .list-title {
@@ -137,7 +133,7 @@
 }
 
 .clear-link:visited {
-  color: none;
+  color: initial;
 }
 
 /* Footer */

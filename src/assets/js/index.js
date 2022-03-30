@@ -1,10 +1,9 @@
 import '../stylesheets/reset.css';
 import '../stylesheets/style.css';
 
-import TodoItems from './modules/TodoItems.js'
-import grabinput from './modules/GrabUserInput.js'
-import displayTodos from './modules/DisplayTodos.js'
-
+import TodoItems from './modules/TodoItems';
+import grabinput from './modules/GrabUserInput';
+import displayTodos from './modules/DisplayTodos';
 
 let todos;
 if (localStorage.length !== 0) {
@@ -15,7 +14,7 @@ if (localStorage.length !== 0) {
   localStorage.setItem('todos', JSON.stringify(todos.todoitems));
 }
 
-let addtodoarrow = document.querySelector('.addtodoarrow');
-addtodoarrow.addEventListener("click", grabinput.grab);
+const addtodoarrow = document.querySelector('.addtodoarrow');
+addtodoarrow.addEventListener('click', grabinput.grab);
 
 displayTodos.display();
