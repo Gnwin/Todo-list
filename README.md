@@ -15,7 +15,7 @@
 
 ## Live site 🚀
 
-🔗 [Live Site Link](https://gnwin.github.io/Todo-list/src/index.html)
+🔗 [Live Site Link](https://gnwin.github.io/Todo-list/dist/index.html)
 
 ## Getting Started
 
