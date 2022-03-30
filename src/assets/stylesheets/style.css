@@ -51,6 +51,29 @@
 
 .main {}
 
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoinput {
+  width: 80%;
+}
+
+.todoinput:focus {
+  outline: none;
+}
+
+.addtodoarrow {
+  width: 15px;
+  margin-right: 0.6rem;
+}
+
+.threedots {
+  width: 1.3rem;
+}
+
 .todo {
   background-color: var(--grey);
   height: 100vh;

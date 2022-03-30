@@ -1,11 +1,24 @@
-
 import '../stylesheets/reset.css';
 import '../stylesheets/style.css';
 
-class todo {
-  constructor (description, index){
-    this.description = description;
-    this.completed = false;
-    this.index = index
-  }
+import TodoItems from './modules/TodoItems.js'
+import grabinput from './modules/GrabUserInput.js'
+import displayTodos from './modules/DisplayTodos.js'
+
+
+let todos;
+if (localStorage.length !== 0) {
+  const b = JSON.parse(localStorage.getItem('todos'));
+  console.log(b);
+  todos = new TodoItems(b);
+  console.log(todos);
+} else {
+  todos = new TodoItems([]);
+  localStorage.setItem('todos', JSON.stringify(todos.todoitems));
+  console.log(todos);
 }
+
+let addtodoarrow = document.querySelector('.addtodoarrow');
+addtodoarrow.addEventListener("click", grabinput.grab);
+
+displayTodos.display();
