@@ -13,16 +13,13 @@
 - JavaScript(ES6)
 - Webpack
 
-## Live site 🚀
-
-🔗 [Live Site Link](https://gnwin.github.io/Todo-list/dist/main.js)
-
 ## Getting Started
 
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: `git@github.com:gnwin/Todo-list.git`
 - Run `npm install` to install dependencies
+- Run `npm start` to start the server
 
 
 ## Author
