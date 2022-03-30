@@ -4,7 +4,7 @@
 
 ## Screenshot
 
-<img src="../Screenshot 2022-03-30 at 2.44.58 AM.png">
+<img src="./src/assets/images/Screenshot 2022-03-30 at 2.44.58 AM.png">
 
 ## Built With
 
