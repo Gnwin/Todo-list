@@ -17,12 +17,12 @@ class DisplayTodos {
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     const tododivs = document.querySelectorAll('.space');
     const inputFocus = document.querySelectorAll('.list-title');
-    console.log(checkboxes);
+    
 
     for (let i = 0; i < todoStorage.length; i += 1) {
-      if(todoStorage[i].completed === true) {
+      if (todoStorage[i].completed === true) {
         checkboxes[i].checked = true;
-        console.log(todoStorage[i]);
+        console.log(todoStorage[i])
         console.log('check');
         inputFocus[i].style.textDecoration = 'line-through';
       }
