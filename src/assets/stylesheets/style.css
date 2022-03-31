@@ -42,11 +42,19 @@
 
 /* Main Content */
 
+.space1 {
+  border-bottom: var(--border-bottom);
+  padding: 1rem;
+  display: var(--flex);
+  align-items: center;
+}
+
 .space {
   border-bottom: var(--border-bottom);
   padding: 1rem;
   display: var(--flex);
   align-items: center;
+  position: relative;
 }
 
 .form {
@@ -91,6 +99,13 @@
   font-weight: bold;
 }
 
+.bin {
+  display: none;
+  position: absolute;
+  /* float: right; */
+  right: 1rem;
+}
+
 .input:focus {
   border: none;
   outline: none;
@@ -106,14 +121,14 @@
 }
 
 .list-title {
-  width: 100%;
+  width: 87%;
   margin: 0 0.8rem;
 }
 
 .list-title:focus {
   outline: none;
   background-color: palegoldenrod;
-  margin: 0 0.8rem;
+  /* margin: 0 0.8rem; */
 }
 
 .clear {
