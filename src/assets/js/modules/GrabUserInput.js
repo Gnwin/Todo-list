@@ -1,4 +1,3 @@
-import { validate } from 'json-schema';
 import Todo from './Todo';
 import TodoItems from './TodoItems';
 
@@ -6,9 +5,6 @@ const todoinput = document.querySelector('.todoinput');
 
 
 class GrabUserInput {
-  constructor() {
-    this.clicked = false;
-  }
   // eslint-disable-next-line class-methods-use-this
   grab(val) {
     val.preventDefault();

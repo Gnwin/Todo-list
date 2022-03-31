@@ -20,7 +20,7 @@ class TodoItems {
     let todosArr = JSON.parse(localStorage.getItem('todos'));
     console.log(todosArr)
     todosArr = todosArr.filter((todo) => todo.index !== id);
-    updateIndex(todosArr);
+    todosArr = updateIndex(todosArr);
     localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;
     displayTodos.display();
@@ -40,7 +40,8 @@ class TodoItems {
 
   static clearAll() {
     let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = [];
+    todosArr = todosArr.filter((todo) =>todo.completed !== true);
+    todosArr = updateIndex(todosArr);
     this.todoitems = todosArr;
     localStorage.setItem('todos', JSON.stringify(todosArr));
     displayTodos.display();
