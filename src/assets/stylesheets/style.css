@@ -159,6 +159,4 @@
   color: initial;
 }
 
-#someInput:focus { color: red; } #someInput { color: black; }
-
 /* Footer */

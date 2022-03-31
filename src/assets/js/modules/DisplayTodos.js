@@ -14,9 +14,8 @@ class DisplayTodos {
     });
     todoList.innerHTML = markup;
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
-    const tododivs = document.querySelectorAll('.space');
     const inputFocus = document.querySelectorAll('.list-title');
-    const form = document.querySelector('.form');
+    // const form = document.querySelector('.form');
 
     for (let i = 0; i < todoStorage.length; i += 1) {
       if (todoStorage[i].completed) {
@@ -28,7 +27,7 @@ class DisplayTodos {
     const bins = document.querySelectorAll('.bin');
 
     for (let i = 0; i < checkboxes.length; i += 1) {
-      checkboxes[i].onchange = grabinput.completed;      
+      checkboxes[i].onchange = grabinput.completed;
       // let checked = false;
       // checkboxes[i].addEventListener('change', () => {
       //  checked = !checked;
@@ -44,17 +43,7 @@ class DisplayTodos {
       bin.onclick = grabinput.remove;
     });
 
-    // let val = false;
     for (let i = 0; i < inputFocus.length; i += 1) {
-      // let val = false;
-      // if (inputFocus[i] === form.activeElement) {
-        // console.log(form.activeElement);
-        // bins[i].style.display = 'block';
-        // grabinput.changeBackground(inputFocus[i]);
-        // inputFocus[i].onFocus = grabinput.changeBackground;
-      // }
-      // console.log(document.activeElement);
-      // inputFocus[i].style.background = 'rgb(237 232 177)';
       inputFocus[i].onfocus = grabinput.changeBackground;
       // inputFocus[i].onblur = grabinput.changeBlur;
     }
