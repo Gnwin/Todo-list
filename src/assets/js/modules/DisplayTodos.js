@@ -1,7 +1,6 @@
 import todomarkup from './TodoMarkup';
+// eslint-disable-next-line import/no-cycle
 import grabinput from './GrabUserInput';
-
-
 
 class DisplayTodos {
   // eslint-disable-next-line class-methods-use-this
@@ -17,22 +16,17 @@ class DisplayTodos {
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     const tododivs = document.querySelectorAll('.space');
     const inputFocus = document.querySelectorAll('.list-title');
-    
+  
 
     for (let i = 0; i < todoStorage.length; i += 1) {
-      if (todoStorage[i].completed === true) {
+      if (todoStorage[i].completed) {
         checkboxes[i].checked = true;
-        console.log(todoStorage[i])
-        console.log('check');
         inputFocus[i].style.textDecoration = 'line-through';
       }
     }
 
-    console.log(inputFocus);
     const bins = document.querySelectorAll('.bin');
-    console.log(bins);
 
-    console.log(checkboxes);
     for (let i = 0; i < checkboxes.length; i += 1) {
       checkboxes[i].onchange = grabinput.completed;      
       // let checked = false;
@@ -46,9 +40,9 @@ class DisplayTodos {
       // })
     }
 
-    bins.forEach((bin)=> {
+    bins.forEach((bin) => {
       bin.onclick = grabinput.remove;
-    })
+    });
 
     for (let i = 0; i < tododivs.length; i += 1) {
       // if (inputFocus[i] === document.activeElement ) {
@@ -65,17 +59,15 @@ class DisplayTodos {
     
     inputFocus.forEach((element) => {
       // proper closure;
-      let initialDescription = element.value;
-      let make_handler = function(initialDescription) {
-        return function (event) {
+      const listItemElement = element.value;
+      const makeHandler = (listItemElement) => {
+        return (event) => {
           // event and extra_data will be available here
-          grabinput.changeValue(event, initialDescription);
+          grabinput.changeValue(event, listItemElement);
         };
       };
-      element.addEventListener("change", make_handler(initialDescription))
-    })
-
-
+      element.addEventListener('change', makeHandler(listItemElement));
+    });
   }
 }
 

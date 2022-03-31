@@ -1,8 +1,8 @@
 import Todo from './Todo';
+// eslint-disable-next-line import/no-cycle
 import TodoItems from './TodoItems';
 
 const todoinput = document.querySelector('.todoinput');
-
 
 class GrabUserInput {
   // eslint-disable-next-line class-methods-use-this
@@ -17,12 +17,14 @@ class GrabUserInput {
     todoinput.value = '';
   }
 
+  // eslint-disable-next-line class-methods-use-this
   remove(val) {
     val.preventDefault();
     const idx = Number(val.target.parentElement.children[1].id);
     TodoItems.deletetodo(idx);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   changeBackground(val) {
     val.preventDefault();
     const parent = val.target.parentElement;
@@ -32,6 +34,7 @@ class GrabUserInput {
     parent.children[3].style.display = 'block';
   }
 
+  // eslint-disable-next-line class-methods-use-this
   changeBlur(val) {
     val.preventDefault();
     const parent = val.target.parentElement;
@@ -40,7 +43,6 @@ class GrabUserInput {
     parent.children[2].style.display = 'block';
     parent.children[3].style.display = 'none';
   }
-
 
   // changeBlur1(val) {
   //   val.preventDefault();
@@ -53,19 +55,22 @@ class GrabUserInput {
   //   parent.style.background = 'none';
   // }
 
+  // eslint-disable-next-line class-methods-use-this
   changeValue(event, description) {
-    if(event.target.value === '') {
+    if (event.target.value === '') {
       event.target.value = description;
       return;
-    };
+    }
     const idx = Number(event.target.id);
     TodoItems.edit(event.target.value, idx);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   clearAllCompleted() {
     TodoItems.clearAll();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   completed(ev) {
     TodoItems.complete(ev);
     // let checked = false;
@@ -78,7 +83,6 @@ class GrabUserInput {
     //     }
     //   })
   }
-
 }
 
 const grabinput = new GrabUserInput();

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import displayTodos from './DisplayTodos';
 import updateIndex from './UpdateIndex';
 
@@ -16,9 +17,7 @@ class TodoItems {
   }
 
   static deletetodo(id) {
-    console.log(id);
     let todosArr = JSON.parse(localStorage.getItem('todos'));
-    console.log(todosArr)
     todosArr = todosArr.filter((todo) => todo.index !== id);
     todosArr = updateIndex(todosArr);
     localStorage.setItem('todos', JSON.stringify(todosArr));
@@ -29,7 +28,7 @@ class TodoItems {
   static edit(description, id) {
     const todosArr = JSON.parse(localStorage.getItem('todos'));
     for (let i = 0; i < todosArr.length; i += 1) {
-      if (i === id-1) {
+      if (i === id - 1) {
         todosArr[i].description = description;
       }
     }
@@ -40,7 +39,7 @@ class TodoItems {
 
   static clearAll() {
     let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = todosArr.filter((todo) =>todo.completed !== true);
+    todosArr = todosArr.filter((todo) => todo.completed !== true);
     todosArr = updateIndex(todosArr);
     this.todoitems = todosArr;
     localStorage.setItem('todos', JSON.stringify(todosArr));
@@ -48,7 +47,7 @@ class TodoItems {
   }
 
   static complete(e) {
-    let todosArr = JSON.parse(localStorage.getItem('todos'));
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
     if (e.target.checked === true) {
       for (let i = 0; i < todosArr.length; i += 1) {
         if (todosArr[i].index === Number(e.target.parentElement.children[1].id)) {
@@ -56,7 +55,7 @@ class TodoItems {
           e.target.parentElement.children[1].style.textDecoration = 'line-through';
         }
       }
-    } else if (e.target.checked === false) {
+    } else {
       for (let i = 0; i < todosArr.length; i += 1) {
         if (todosArr[i].index === Number(e.target.parentElement.children[1].id)) {
           todosArr[i].completed = false;
