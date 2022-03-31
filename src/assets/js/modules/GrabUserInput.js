@@ -30,7 +30,7 @@ class GrabUserInput {
   changeBackground(val) {
     val.preventDefault();
     const parent = val.target.parentElement;
-    parent.style.background = 'rgb(237 232 177)';
+    // parent.style.background = 'rgb(237 232 177)';
     // parent.children[1].style.background = 'rgb(237 232 177)';
     parent.children[2].style.display = 'none';
     parent.children[3].style.display = 'block';
@@ -39,7 +39,7 @@ class GrabUserInput {
   changeBlur(val) {
     val.preventDefault();
     const parent = val.target.parentElement;
-    parent.style.background = 'none';
+    // parent.style.background = 'none';
     // parent.children[1].style.background = 'none';
     parent.children[2].style.display = 'block';
     parent.children[3].style.display = 'none';

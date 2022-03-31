@@ -58,7 +58,7 @@ class DisplayTodos {
       // console.log(document.activeElement);
       // inputFocus[i].style.background = 'rgb(237 232 177)';
       inputFocus[i].onfocus = grabinput.changeBackground;
-      inputFocus[i].onblur = grabinput.changeBlur;
+      // inputFocus[i].onblur = grabinput.changeBlur;
       // tododivs[i].onclick = grabinput.changeBackground;
       // tododivs[i].onblur = grabinput.changeBlur;
     }

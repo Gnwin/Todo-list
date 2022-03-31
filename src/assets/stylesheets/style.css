@@ -119,11 +119,6 @@
   height: 1.1rem;
 }
 
-/* .input:checked {
-  border: none;
-  outline: none;
-} */
-
 .input[type="checkbox"] {
   width: 1.1rem;
   height: 1.1rem;
@@ -141,7 +136,7 @@
 
 .list-title:focus {
   outline: none;
-  background-color: palegoldenrod;
+  /* background-color: palegoldenrod; */
   /* margin: 0 0.8rem; */
 }
 
@@ -149,7 +144,6 @@
   text-align: center;
   padding: 1.1rem;
   background-color: var(--grey);
-  text-decoration: ;
 }
 
 .clear-link {
