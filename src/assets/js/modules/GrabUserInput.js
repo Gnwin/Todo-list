@@ -28,6 +28,7 @@ class GrabUserInput {
   changeBackground(val) {
     val.preventDefault();
     const parent = val.target.parentElement;
+    // console.log(document.activeElement);
     // parent.style.background = 'rgb(237 232 177)';
     // parent.children[1].style.background = 'rgb(237 232 177)';
     parent.children[2].style.display = 'none';

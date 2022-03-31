@@ -16,7 +16,7 @@ class DisplayTodos {
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     const tododivs = document.querySelectorAll('.space');
     const inputFocus = document.querySelectorAll('.list-title');
-  
+    const form = document.querySelector('.form');
 
     for (let i = 0; i < todoStorage.length; i += 1) {
       if (todoStorage[i].completed) {
@@ -44,27 +44,27 @@ class DisplayTodos {
       bin.onclick = grabinput.remove;
     });
 
-    for (let i = 0; i < tododivs.length; i += 1) {
-      // if (inputFocus[i] === document.activeElement ) {
-      //   bins[i].style.display = 'block';
-      //   grabinput.changeBackground(inputFocus[i])
+    // let val = false;
+    for (let i = 0; i < inputFocus.length; i += 1) {
+      // let val = false;
+      // if (inputFocus[i] === form.activeElement) {
+        // console.log(form.activeElement);
+        // bins[i].style.display = 'block';
+        // grabinput.changeBackground(inputFocus[i]);
+        // inputFocus[i].onFocus = grabinput.changeBackground;
       // }
       // console.log(document.activeElement);
       // inputFocus[i].style.background = 'rgb(237 232 177)';
       inputFocus[i].onfocus = grabinput.changeBackground;
       // inputFocus[i].onblur = grabinput.changeBlur;
-      // tododivs[i].onclick = grabinput.changeBackground;
-      // tododivs[i].onblur = grabinput.changeBlur;
     }
     
     inputFocus.forEach((element) => {
       // proper closure;
       const listItemElement = element.value;
       const makeHandler = (listItemElement) => {
-        return (event) => {
-          // event and extra_data will be available here
-          grabinput.changeValue(event, listItemElement);
-        };
+        // event and extra_data available here
+        return (event) => grabinput.changeValue(event, listItemElement);
       };
       element.addEventListener('change', makeHandler(listItemElement));
     });
