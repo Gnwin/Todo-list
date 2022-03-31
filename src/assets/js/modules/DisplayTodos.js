@@ -51,7 +51,8 @@ class DisplayTodos {
     inputFocus.forEach((element) => {
       // proper closure;
       const listItemElement = element.value;
-      const makeHandler = (listItemElement) => (event) => grabinput.changeValue(event, listItemElement);
+      const makeHandler = (listItemElement) => 
+      (event) => grabinput.changeValue(event, listItemElement);
       element.addEventListener('change', makeHandler(listItemElement));
     });
   }
