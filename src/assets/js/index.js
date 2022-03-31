@@ -14,7 +14,12 @@ if (localStorage.length !== 0) {
   localStorage.setItem('todos', JSON.stringify(todos.todoitems));
 }
 
+
+
 const addtodoarrow = document.querySelector('.addtodoarrow');
 addtodoarrow.addEventListener('click', grabinput.grab);
+
+const deleteAll = document.querySelector('.clear-link');
+deleteAll.onclick = grabinput.clearAllCompleted;
 
 displayTodos.display();

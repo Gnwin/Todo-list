@@ -102,13 +102,12 @@
 .bin {
   display: none;
   position: absolute;
-  /* float: right; */
   right: 1rem;
 }
 
-.input:focus {
-  border: none;
+.todoinput:focus {
   outline: none;
+  background-color: none;
 }
 
 .todoinput::placeholder {
@@ -118,6 +117,21 @@
 .input[type="checkbox"] {
   width: 1.1rem;
   height: 1.1rem;
+}
+
+/* .input:checked {
+  border: none;
+  outline: none;
+} */
+
+.input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.input[type="checkbox"] {
+  border: none;
+  outline: none;
 }
 
 .list-title {
@@ -135,6 +149,7 @@
   text-align: center;
   padding: 1.1rem;
   background-color: var(--grey);
+  text-decoration: ;
 }
 
 .clear-link {

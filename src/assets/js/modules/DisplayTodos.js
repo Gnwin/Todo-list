@@ -14,11 +14,60 @@ class DisplayTodos {
       markup += elemenT;
     });
     todoList.innerHTML = markup;
+    const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
+    console.log(checkboxes);
+
     const tododivs = document.querySelectorAll('.space');
     const inputFocus = document.querySelectorAll('.list-title');
+    // const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
+
+    for (let i = 0; i < todoStorage.length; i += 1) {
+      if(todoStorage[i].completed === true) {
+        checkboxes[i].checked = true;
+        console.log(todoStorage[i])
+        console.log('check');
+      } 
+      // else {
+        // checkboxes[i].checked === false;
+      // }
+    }
+
     console.log(inputFocus);
     const bins = document.querySelectorAll('.bin');
     console.log(bins);
+
+    console.log(checkboxes);
+    for (let i = 0; i < checkboxes.length; i += 1) {
+      console.log(checkboxes[i]);
+      // let checked = false;
+
+      checkboxes[i].onchange = grabinput.completed;
+
+      //  // proper closure;
+      //  let check = false;
+      //  let initialDescription = checkboxes[i];
+      //  let ini = inputFocus[i];
+      //  let make_handler = function(initialDescription, ini, check ) {
+      //    return function (event) {
+      //      // event and extra_data will be available here
+      //     //  check = !check
+      //      grabinput.completed(event, initialDescription, ini, check);
+      //    };
+      //  };
+      //  checkboxes[i].addEventListener("change", make_handler(initialDescription, ini, check));
+
+      
+      // let checked = false;
+      //   checkboxes[i].addEventListener('change', () => {
+      //     checked = !checked;
+      //     if (checked) {
+      //       inputFocus[i].style.textDecoration = 'line-through';
+      //     } else {
+      //       inputFocus[i].style.textDecoration = 'none';
+      //     }
+      //   })
+    }
+
     bins.forEach((bin)=> {
       bin.onclick = grabinput.remove;
     })

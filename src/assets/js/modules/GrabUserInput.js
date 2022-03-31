@@ -66,6 +66,23 @@ class GrabUserInput {
     TodoItems.edit(event.target.value, idx);
   }
 
+  clearAllCompleted() {
+    TodoItems.clearAll();
+  }
+
+  completed(ev) {
+    TodoItems.complete(ev);
+    // let checked = false;
+    //   checkboxes[i].addEventListener('change', () => {
+    //     checked = !checked;
+    //     if (checked) {
+    //       inputFocus[i].style.textDecoration = 'line-through';
+    //     } else {
+    //       inputFocus[i].style.textDecoration = 'none';
+    //     }
+    //   })
+  }
+
 }
 
 const grabinput = new GrabUserInput();
