@@ -1,4 +1,4 @@
-import displayTodos from './DisplayTodos';
+// import displayTodos from './DisplayTodos';
 import updateIndex from './UpdateIndex';
 
 class TodoItems {
@@ -12,7 +12,8 @@ class TodoItems {
     this.todoitems = todoobj;
     localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;
-    displayTodos.display();
+    document.location.reload(true)
+    // displayTodos.display();
   }
 
   static deletetodo = (id) => {
@@ -21,7 +22,8 @@ class TodoItems {
     todosArr = updateIndex(todosArr);
     localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;
-    displayTodos.display();
+    document.location.reload(true)
+    // displayTodos.display();
   }
 
   static edit = (description, id) => {
@@ -33,7 +35,8 @@ class TodoItems {
     }
     this.todoitems = todosArr;
     localStorage.setItem('todos', JSON.stringify(todosArr));
-    displayTodos.display();
+    document.location.reload(true)
+    // displayTodos.display();
   }
 
   static clearAll = () => {
@@ -42,7 +45,8 @@ class TodoItems {
     todosArr = updateIndex(todosArr);
     this.todoitems = todosArr;
     localStorage.setItem('todos', JSON.stringify(todosArr));
-    displayTodos.display();
+    document.location.reload(true)
+    // displayTodos.display();
   }
 
   static complete = (e) => {
@@ -63,7 +67,8 @@ class TodoItems {
       }
     }
     localStorage.setItem('todos', JSON.stringify(todosArr));
-    displayTodos.display();
+    document.location.reload(true)
+    // displayTodos.display();
   }
 }
 
