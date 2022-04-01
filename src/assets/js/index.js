@@ -5,7 +5,6 @@ import TodoItems from './modules/TodoItems';
 import grabinput from './modules/GrabUserInput';
 import displayTodos from './modules/DisplayTodos';
 
-
 let todos;
 if (localStorage.length !== 0) {
   const b = JSON.parse(localStorage.getItem('todos'));
