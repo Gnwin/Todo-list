@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import displayTodos from './DisplayTodos';
 import updateIndex from './UpdateIndex';
 
