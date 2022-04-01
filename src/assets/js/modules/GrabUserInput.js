@@ -17,6 +17,9 @@ class GrabUserInput {
 
   remove = (val) => {
     val.preventDefault();
+    if (!val.target.parentElement.children[0].checked) {
+      return;
+    }
     TodoItems.deletetodo();
   }
 
