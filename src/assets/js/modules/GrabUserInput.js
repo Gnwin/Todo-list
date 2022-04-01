@@ -17,8 +17,7 @@ class GrabUserInput {
 
   remove = (val) => {
     val.preventDefault();
-    const idx = Number(val.target.parentElement.children[1].id);
-    TodoItems.deletetodo(idx);
+    TodoItems.deletetodo();
   }
 
   changeBackground = (val) => {

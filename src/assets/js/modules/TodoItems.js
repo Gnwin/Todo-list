@@ -14,10 +14,9 @@ class TodoItems {
     document.location.reload(true);
   }
 
-  static deletetodo = (id) => {
+  static deletetodo = () => {
     let todosArr = JSON.parse(localStorage.getItem('todos'));
     todosArr = todosArr.filter((todo) => todo.completed !== true);
-    console.log(todosArr);
     todosArr = updateIndex(todosArr);
     localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;
