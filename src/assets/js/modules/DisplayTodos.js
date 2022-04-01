@@ -13,7 +13,6 @@ class DisplayTodos {
     todoList.innerHTML = markup;
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     const inputFocus = document.querySelectorAll('.list-title');
-    // const form = document.querySelector('.form');
 
     for (let i = 0; i < todoStorage.length; i += 1) {
       if (todoStorage[i].completed) {
@@ -26,15 +25,6 @@ class DisplayTodos {
 
     for (let i = 0; i < checkboxes.length; i += 1) {
       checkboxes[i].onchange = grabinput.completed;
-      // let checked = false;
-      // checkboxes[i].addEventListener('change', () => {
-      //  checked = !checked;
-      //  if (checked) {
-      //    inputFocus[i].style.textDecoration = 'line-through';
-      //  } else {
-      //    inputFocus[i].style.textDecoration = 'none';
-      //  }
-      // })
     }
 
     bins.forEach((bin) => {
@@ -43,14 +33,14 @@ class DisplayTodos {
 
     for (let i = 0; i < inputFocus.length; i += 1) {
       inputFocus[i].onfocus = grabinput.changeBackground;
-      // inputFocus[i].onblur = grabinput.changeBlur;
     }
 
     inputFocus.forEach((element) => {
       // proper closure;
       const listItemElement = element.value;
-      // eslint-disable-next-line max-len
-      const makeHandler = (listItemElement) => (event) => grabinput.changeValue(event, listItemElement);
+      const makeHandler = (listItemElement) => (event) => {
+        grabinput.changeValue(event, listItemElement);
+      }
       element.addEventListener('change', makeHandler(listItemElement));
     });
   }

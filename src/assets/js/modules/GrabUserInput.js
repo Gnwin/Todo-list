@@ -24,9 +24,6 @@ class GrabUserInput {
   changeBackground = (val) => {
     val.preventDefault();
     const parent = val.target.parentElement;
-    // console.log(document.activeElement);
-    // parent.style.background = 'rgb(237 232 177)';
-    // parent.children[1].style.background = 'rgb(237 232 177)';
     parent.children[2].style.display = 'none';
     parent.children[3].style.display = 'block';
   }
@@ -34,8 +31,6 @@ class GrabUserInput {
   changeBlur = (val) => {
     val.preventDefault();
     const parent = val.target.parentElement;
-    // parent.style.background = 'none';
-    // parent.children[1].style.background = 'none';
     parent.children[2].style.display = 'block';
     parent.children[3].style.display = 'none';
   }
@@ -55,15 +50,6 @@ class GrabUserInput {
 
   completed = (ev) => {
     TodoItems.complete(ev);
-    // let checked = false;
-    //   checkboxes[i].addEventListener('change', () => {
-    //     checked = !checked;
-    //     if (checked) {
-    //       inputFocus[i].style.textDecoration = 'line-through';
-    //     } else {
-    //       inputFocus[i].style.textDecoration = 'none';
-    //     }
-    //   })
   }
 }
 
