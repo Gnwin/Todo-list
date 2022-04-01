@@ -1,12 +1,10 @@
 import Todo from './Todo';
-// eslint-disable-next-line import/no-cycle
 import TodoItems from './TodoItems';
 
 const todoinput = document.querySelector('.todoinput');
 
 class GrabUserInput {
-  // eslint-disable-next-line class-methods-use-this
-  grab(val) {
+  grab = (val) => {
     val.preventDefault();
     if (todoinput.value === '') {
       return;
@@ -17,15 +15,13 @@ class GrabUserInput {
     todoinput.value = '';
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  remove(val) {
+  remove = (val) => {
     val.preventDefault();
     const idx = Number(val.target.parentElement.children[1].id);
     TodoItems.deletetodo(idx);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  changeBackground(val) {
+  changeBackground = (val) => {
     val.preventDefault();
     const parent = val.target.parentElement;
     // console.log(document.activeElement);
@@ -35,8 +31,7 @@ class GrabUserInput {
     parent.children[3].style.display = 'block';
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  changeBlur(val) {
+  changeBlur = (val) => {
     val.preventDefault();
     const parent = val.target.parentElement;
     // parent.style.background = 'none';
@@ -45,19 +40,7 @@ class GrabUserInput {
     parent.children[3].style.display = 'none';
   }
 
-  // changeBlur1(val) {
-  //   val.preventDefault();
-  //   this.clicked = !this.clicked;
-  //   if (this.clicked) {
-  //     const parent = val.target.parentElement;
-  //     parent.style.background = 'rgb(237 232 177)';
-  //     return;
-  //   }
-  //   parent.style.background = 'none';
-  // }
-
-  // eslint-disable-next-line class-methods-use-this
-  changeValue(event, description) {
+  changeValue = (event, description) => {
     if (event.target.value === '') {
       event.target.value = description;
       return;
@@ -66,13 +49,11 @@ class GrabUserInput {
     TodoItems.edit(event.target.value, idx);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  clearAllCompleted() {
+  clearAllCompleted = () => {
     TodoItems.clearAll();
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  completed(ev) {
+  completed = (ev) => {
     TodoItems.complete(ev);
     // let checked = false;
     //   checkboxes[i].addEventListener('change', () => {

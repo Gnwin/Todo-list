@@ -7,7 +7,7 @@ class TodoItems {
     this.todoitems = todolist;
   }
 
-  static addtodo(todoobj) {
+  static addtodo = (todoobj) => {
     const todosArr = JSON.parse(localStorage.getItem('todos'));
     todosArr.push(todoobj);
     this.todoitems = todoobj;
@@ -16,7 +16,7 @@ class TodoItems {
     displayTodos.display();
   }
 
-  static deletetodo(id) {
+  static deletetodo = (id) => {
     let todosArr = JSON.parse(localStorage.getItem('todos'));
     todosArr = todosArr.filter((todo) => todo.index !== id);
     todosArr = updateIndex(todosArr);
@@ -25,7 +25,7 @@ class TodoItems {
     displayTodos.display();
   }
 
-  static edit(description, id) {
+  static edit = (description, id) => {
     const todosArr = JSON.parse(localStorage.getItem('todos'));
     for (let i = 0; i < todosArr.length; i += 1) {
       if (i === id - 1) {
@@ -37,7 +37,7 @@ class TodoItems {
     displayTodos.display();
   }
 
-  static clearAll() {
+  static clearAll = () => {
     let todosArr = JSON.parse(localStorage.getItem('todos'));
     todosArr = todosArr.filter((todo) => todo.completed !== true);
     todosArr = updateIndex(todosArr);
@@ -46,7 +46,7 @@ class TodoItems {
     displayTodos.display();
   }
 
-  static complete(e) {
+  static complete = (e) => {
     const todosArr = JSON.parse(localStorage.getItem('todos'));
     if (e.target.checked === true) {
       for (let i = 0; i < todosArr.length; i += 1) {

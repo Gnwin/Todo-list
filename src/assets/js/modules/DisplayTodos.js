@@ -1,10 +1,8 @@
 import todomarkup from './TodoMarkup';
-// eslint-disable-next-line import/no-cycle
 import grabinput from './GrabUserInput';
 
 class DisplayTodos {
-  // eslint-disable-next-line class-methods-use-this
-  display() {
+  display = () => {
     const todoStorage = JSON.parse(localStorage.getItem('todos'));
     const todoList = document.querySelector('.list-items');
     let markup = '';
