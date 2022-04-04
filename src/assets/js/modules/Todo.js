@@ -5,8 +5,21 @@ class Todo {
     this.index = index;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  completetodo() {}
+  get describetodo() {
+    return this.description;
+  }
+
+  set describetodo(string) {
+    this.description = string;
+  }
+
+  get completetodo() {
+    return this.completed;
+  }
+
+  set completetodo(complete) {
+    this.completed = complete;
+  }
 }
 
 export default Todo;
