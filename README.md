@@ -6,6 +6,10 @@
 
 <img src="./src/assets/images/Screenshot 2022-03-30 at 2.44.58 AM.png">
 
+## Live Preview
+
+- Live preview: [click here](https://gnwin.github.io/Todo-list/)
+
 ## Built With
 
 - HTML
