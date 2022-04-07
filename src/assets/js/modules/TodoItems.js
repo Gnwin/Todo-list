@@ -16,7 +16,7 @@ class TodoItems {
     store.push(todoobj);
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
-    // document.location.reload(true);
+    document.location.reload(true);
     // displayTodos.display();
     return true;
   }
