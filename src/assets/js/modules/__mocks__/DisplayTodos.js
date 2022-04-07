@@ -7,7 +7,6 @@ const todomarkup = (todo) => `<div class="space">
 <img src="https://img.icons8.com/external-others-amoghdesign/24/000000/external-bin-multimedia-solid-30px-others-amoghdesign.png" class="bin"/>
 </div>`;
 
-
 class DisplayTodos {
   display = () => {
     const todoStorage = JSON.parse(localStorage.getItem('todos'));
@@ -30,26 +29,26 @@ class DisplayTodos {
 
     const bins = document.querySelectorAll('.bin');
 
-    // for (let i = 0; i < checkboxes.length; i += 1) {
-    //   checkboxes[i].onchange = grabinput.completed;
-    // }
+    for (let i = 0; i < checkboxes.length; i += 1) {
+      checkboxes[i].onchange = grabinput.completed;
+    }
 
-    // bins.forEach((bin) => {
-    //   bin.onclick = grabinput.remove;
-    // });
+    bins.forEach((bin) => {
+      bin.onclick = grabinput.remove;
+    });
 
-    // for (let i = 0; i < inputFocus.length; i += 1) {
-    //   inputFocus[i].onfocus = grabinput.changeBackground;
-    // }
+    for (let i = 0; i < inputFocus.length; i += 1) {
+      inputFocus[i].onfocus = grabinput.changeBackground;
+    }
 
-    // inputFocus.forEach((element) => {
-    //   // proper closure;
-    //   const listItemElement = element.value;
-    //   const makeHandler = (listItemElement) => (event) => {
-    //     grabinput.changeValue(event, listItemElement);
-    //   };
-    //   element.addEventListener('change', makeHandler(listItemElement));
-    // });
+    inputFocus.forEach((element) => {
+      // proper closure;
+      const listItemElement = element.value;
+      const makeHandler = (listItemElement) => (event) => {
+        grabinput.changeValue(event, listItemElement);
+      };
+      element.addEventListener('change', makeHandler(listItemElement));
+    });
   }
 }
 
