@@ -1,22 +1,30 @@
 import updateIndex from './UpdateIndex';
+import displayTodos from './DisplayTodos';
+
+// const store = [{
+//   description: 'dfdfd',
+//   completed: true,
+//   index: 1
+// }]
 
 class TodoItems {
   constructor(todolist) {
     this.todoitems = todolist;
   }
 
-  static addtodo = (todoobj) => {
-    const todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr.push(todoobj);
-    this.todoitems = todoobj;
-    localStorage.setItem('todos', JSON.stringify(todosArr));
-    this.todoitems = todosArr;
-    document.location.reload(true);
+  static addtodo = (todoobj, store) => {
+    store.push(todoobj);
+    this.todoitems = store;
+    localStorage.setItem('todos', JSON.stringify(store));
+    // document.location.reload(true);
+    // displayTodos.display();
+    return true;
   }
 
-  static deletetodo = () => {
+  static deletetodo = (todoid) => {
+    console.log(todoid);
     let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = todosArr.filter((todo) => todo.completed !== true);
+    todosArr = todosArr.filter((todo) => todo.id !== todoid );
     todosArr = updateIndex(todosArr);
     localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;

@@ -1,0 +1,105 @@
+/**
+ * @jest-environment jsdom
+ */
+
+import displayTodos from "../DisplayTodos";
+import grabinput from "../GrabUserInput";
+import Todo from "../Todo";
+import todomarkup from "../TodoMarkup";
+import TodoItems from "../TodoItems";
+jest.mock("../DisplayTodos");
+
+
+document.body.innerHTML = `<div class="list-items"></div>`;
+
+
+const store = [{
+  description: 'dfdfd',
+  completed: true,
+  index: 1,
+}]
+
+describe('add a new todoitem', () => {
+  it('adds a new object to the store', () => {
+    const number = store.length;
+    TodoItems.addtodo("sleep", store);
+    console.log(store);
+    expect(store.length).toBe(number + 1);
+  })
+
+  it('adds a node to the DOM', () => {
+    const todoList = document.querySelector('.list-items');
+    let markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    })
+    todoList.innerHTML = markup;
+    // markup = [markup]
+    // const todoitems = document.querySelectorAll('.space');
+    // console.log(markup.length);
+    // console.log(document.body.children[0].innerHTML.length);
+    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
+    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
+  })
+  
+  // test('addtest', () => {
+  //   expect(TodoItems.addtodo("sleep", store)).toBeTruthy();
+  // })
+})
+
+describe('remove a new todoitem', () => {
+  it('removes a new object to the store', () => {
+    const number = store.length;
+    TodoItems.addtodo("sleep", store);
+    console.log(store);
+    expect(store.length).toBe(number + 1);
+  })
+
+  it('adds a node to the DOM', () => {
+    const todoList = document.querySelector('.list-items');
+    let markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    })
+    todoList.innerHTML = markup;
+    // markup = [markup]
+    // const todoitems = document.querySelectorAll('.space');
+    // console.log(markup.length);
+    // console.log(document.body.children[0].innerHTML.length);
+    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
+    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
+  })
+  
+  // test('addtest', () => {
+  //   expect(TodoItems.addtodo("sleep", store)).toBeTruthy();
+  // })
+})
+
+
+describe('add a new todoitem', () => {
+  it('adds a new object to the store', () => {
+    const number = store.length;
+    TodoItems.addtodo("sleep", store);
+    console.log(store);
+    expect(store.length).toBe(number + 1);
+  })
+
+  it('adds a node to the DOM', () => {
+    const todoList = document.querySelector('.list-items');
+    let markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    })
+    todoList.innerHTML = markup;
+    // markup = [markup]
+    // const todoitems = document.querySelectorAll('.space');
+    // console.log(markup.length);
+    // console.log(document.body.children[0].innerHTML.length);
+    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
+    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
+  })
+  
+  // test('addtest', () => {
+  //   expect(TodoItems.addtodo("sleep", store)).toBeTruthy();
+  // })
+})
