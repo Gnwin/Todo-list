@@ -53,8 +53,8 @@ describe('add a new todoitem', () => {
 // remove
 describe('remove a new todoitem', () => {
   beforeEach(() => {
-    store =[];
-    store =[
+    store = [];
+    store = [
       {description: "play", completed: false, index: 1},
       {description: "work", completed: false, index: 2},
       {description: "study", completed: false, index: 3}
