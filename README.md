@@ -8,7 +8,7 @@
 
 ## Testing with jest Screenshot
 
-<img src="./src/assets/images/Screenshot 2022-04-07 at 11.07.45 PM.png"
+<img src="./src/assets/images/Screenshot 2022-04-07 at 11.07.45 PM.png">
 
 ## Live Preview
 
