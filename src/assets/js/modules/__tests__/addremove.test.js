@@ -11,7 +11,7 @@ let store = [{
   index: 1,
 }];
 
-document.body.innerHTML = `<div class='list-items'></div>`;
+document.body.innerHTML = '<div class=\'list-items\'></div>';
 
 // add
 describe('add a new todoitem', () => {
