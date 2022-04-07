@@ -5,22 +5,21 @@ class TodoItems {
     this.todoitems = todolist;
   }
 
-  static addtodo = (todoobj) => {
-    const todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr.push(todoobj);
-    this.todoitems = todoobj;
-    localStorage.setItem('todos', JSON.stringify(todosArr));
-    this.todoitems = todosArr;
-    document.location.reload(true);
+  static addtodo = (todoobj, store) => {
+    store.push(todoobj);
+    this.todoitems = store;
+    localStorage.setItem('todos', JSON.stringify(store));
+    // document.location.reload(true);
+    return true;
   }
 
-  static deletetodo = () => {
-    let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = todosArr.filter((todo) => todo.completed !== true);
-    todosArr = updateIndex(todosArr);
-    localStorage.setItem('todos', JSON.stringify(todosArr));
-    this.todoitems = todosArr;
-    document.location.reload(true);
+  static deletetodo = (todoid, store) => {
+    store = store.filter((todo) => todo.index !== todoid);
+    store = updateIndex(store);
+    localStorage.setItem('todos', JSON.stringify(store));
+    this.todoitems = store;
+    return store;
+    // document.location.reload(true);
   }
 
   static edit = (description, id) => {

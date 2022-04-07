@@ -11,7 +11,8 @@ class GrabUserInput {
     }
     const idx = JSON.parse(localStorage.getItem('todos')).length + 1;
     const todo = new Todo(todoinput.value, idx);
-    TodoItems.addtodo(todo);
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.addtodo(todo, todosArr);
     todoinput.value = '';
   }
 
@@ -20,7 +21,8 @@ class GrabUserInput {
     if (!val.target.parentElement.children[0].checked) {
       return;
     }
-    TodoItems.deletetodo();
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.deletetodo(Number(val.target.parentElement.children[1].id), todosArr);
   }
 
   changeBackground = (val) => {
