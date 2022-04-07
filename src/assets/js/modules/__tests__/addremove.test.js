@@ -10,7 +10,7 @@ import todomarkup from "../TodoMarkup";
 import TodoItems from "../TodoItems";
 // jest.mock("../DisplayTodos");
 
-const store = [{
+let store = [{
   description: 'laundry',
   completed: false,
   index: 1,
@@ -27,7 +27,7 @@ describe('add a new todoitem', () => {
       completed: false,
       index: 2,
     }, store);
-    console.log(store);
+    // console.log(store);
     expect(store.length).toBe(number + 1);
   })
 
@@ -43,7 +43,7 @@ describe('add a new todoitem', () => {
   
   it('checks for a truthy value', () => {
     expect(TodoItems.addtodo({
-      description: 'read a book',
+      description: 'wash the dishes',
       completed: false,
       index: 3,
     }, store)).toBeTruthy();
@@ -52,27 +52,40 @@ describe('add a new todoitem', () => {
 
 // remove
 describe('remove a new todoitem', () => {
-  it('removes a new object to the store', () => {
-    const number = store.length;
-    TodoItems.addtodo("sleep", store);
-    console.log(store);
-    expect(store.length).toBe(number + 1);
+  beforeEach(() => {
+    store =[];
+    store =[
+      {description: "play", completed: false, index: 1},
+      {description: "work", completed: false, index: 2},
+      {description: "study", completed: false, index: 3}
+    ]
   })
 
-  it('adds a node to the DOM', () => {
-    const todoList = document.querySelector('.list-items');
-    let markup = '';
-    store.forEach((todo) => {
-      markup += todomarkup(todo);
-    })
-    todoList.innerHTML = markup;
+  it('removes a new object to the store', () => {
+    // console.log(store);
+    const size = store.length;
+    store = TodoItems.deletetodo(2, store);
+    expect(store.length).toEqual(size - 1);
+    // const number = store.length;
+    // TodoItems.addtodo("sleep", store);
+    // console.log(store);
+    // expect(store.length).toBe(number + 1);
+  })
+
+  // it('adds a node to the DOM', () => {
+  //   const todoList = document.querySelector('.list-items');
+  //   let markup = '';
+  //   store.forEach((todo) => {
+  //     markup += todomarkup(todo);
+  //   })
+  //   todoList.innerHTML = markup;
     // markup = [markup]
     // const todoitems = document.querySelectorAll('.space');
     // console.log(markup.length);
     // console.log(document.body.children[0].innerHTML.length);
     // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
     // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
-  })
+  // })
   
   // test('addtest', () => {
   //   expect(TodoItems.addtodo("sleep", store)).toBeTruthy();
