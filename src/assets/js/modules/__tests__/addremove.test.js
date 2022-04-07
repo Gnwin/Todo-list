@@ -50,7 +50,7 @@ describe('add a new todoitem', () => {
   })
 })
 
-// remove
+//remove
 describe('remove a new todoitem', () => {
   beforeEach(() => {
     store = [];
@@ -58,18 +58,28 @@ describe('remove a new todoitem', () => {
       {description: "play", completed: false, index: 1},
       {description: "work", completed: false, index: 2},
       {description: "study", completed: false, index: 3}
-    ]
+    ];
+    const todoList = document.querySelector('.list-items');
+    let markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    })
+    todoList.innerHTML = markup;
   })
 
   it('removes a new object to the store', () => {
-    // console.log(store);
     const size = store.length;
     store = TodoItems.deletetodo(2, store);
     expect(store.length).toEqual(size - 1);
-    // const number = store.length;
-    // TodoItems.addtodo("sleep", store);
-    // console.log(store);
-    // expect(store.length).toBe(number + 1);
+  })
+
+  it('item removed from the list', () => {
+    const space = document.querySelectorAll('.space');
+    
+    // console.log(document.body.children[0].innerHTML);
+    // console.log(space.length)
+    console.log(markup);
+
   })
 
   // it('adds a node to the DOM', () => {

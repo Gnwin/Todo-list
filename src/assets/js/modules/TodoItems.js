@@ -16,7 +16,7 @@ class TodoItems {
   static deletetodo = (todoid, store) => {
     store = store.filter((todo) => todo.index !== todoid );
     // console.log(store);
-    // store = updateIndex(store);
+    store = updateIndex(store);
     localStorage.setItem('todos', JSON.stringify(store));
     this.todoitems = store;
     return store;
