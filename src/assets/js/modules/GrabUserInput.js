@@ -21,7 +21,8 @@ class GrabUserInput {
     if (!val.target.parentElement.children[0].checked) {
       return;
     }
-    TodoItems.deletetodo(Number(val.target.parentElement.children[1].id));
+    let todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.deletetodo(Number(val.target.parentElement.children[1].id), todosArr);
   }
 
   changeBackground = (val) => {

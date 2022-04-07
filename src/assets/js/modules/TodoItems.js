@@ -1,11 +1,4 @@
 import updateIndex from './UpdateIndex';
-import displayTodos from './DisplayTodos';
-
-// const store = [{
-//   description: 'dfdfd',
-//   completed: true,
-//   index: 1
-// }]
 
 class TodoItems {
   constructor(todolist) {
@@ -17,17 +10,14 @@ class TodoItems {
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
-    // displayTodos.display();
     return true;
   }
 
-  static deletetodo = (todoid) => {
-    console.log(todoid);
-    let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = todosArr.filter((todo) => todo.id !== todoid );
-    todosArr = updateIndex(todosArr);
-    localStorage.setItem('todos', JSON.stringify(todosArr));
-    this.todoitems = todosArr;
+  static deletetodo = (todoid, store) => {
+    store = store.filter((todo) => todo.index !== todoid );
+    store = updateIndex(store);
+    localStorage.setItem('todos', JSON.stringify(store));
+    this.todoitems = store;
     document.location.reload(true);
   }
 
