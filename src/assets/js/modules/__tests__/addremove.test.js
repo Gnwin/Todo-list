@@ -2,13 +2,8 @@
  * @jest-environment jsdom
  */
 
-// import displayTodos from "../DisplayTodos";
-// import grabinput from "../GrabUserInput";
-// import Todo from "../Todo";
-// import updateIndex from "../UpdateIndex";
 import todomarkup from "../TodoMarkup";
 import TodoItems from "../TodoItems";
-// jest.mock("../DisplayTodos");
 
 let store = [{
   description: 'laundry',
@@ -27,7 +22,6 @@ describe('add a new todoitem', () => {
       completed: false,
       index: 2,
     }, store);
-    // console.log(store);
     expect(store.length).toBe(number + 1);
   })
 
@@ -50,7 +44,7 @@ describe('add a new todoitem', () => {
   })
 })
 
-//remove
+// remove
 describe('remove a new todoitem', () => {
   beforeEach(() => {
     store = [];
@@ -74,30 +68,24 @@ describe('remove a new todoitem', () => {
   })
 
   it('item removed from the list', () => {
-    const space = document.querySelectorAll('.space');
-    
-    // console.log(document.body.children[0].innerHTML);
-    // console.log(space.length)
-    console.log(markup);
+    const todoList = document.querySelector('.list-items');
 
+    let markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    })
+    todoList.innerHTML = markup;
+    let size2 = document.querySelectorAll('.space').length;
+
+    store = TodoItems.deletetodo(2, store);
+
+    markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    })
+    todoList.innerHTML = markup;
+    let size = document.querySelectorAll('.space').length;
+
+    expect(size).toEqual(size2 - 1);
   })
-
-  // it('adds a node to the DOM', () => {
-  //   const todoList = document.querySelector('.list-items');
-  //   let markup = '';
-  //   store.forEach((todo) => {
-  //     markup += todomarkup(todo);
-  //   })
-  //   todoList.innerHTML = markup;
-    // markup = [markup]
-    // const todoitems = document.querySelectorAll('.space');
-    // console.log(markup.length);
-    // console.log(document.body.children[0].innerHTML.length);
-    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
-    // expect(typeof markup).toEqual(typeof document.body.children[0].innerHTML);
-  // })
-  
-  // test('addtest', () => {
-  //   expect(TodoItems.addtodo("sleep", store)).toBeTruthy();
-  // })
 })
