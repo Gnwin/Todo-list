@@ -45,7 +45,8 @@ class GrabUserInput {
       return;
     }
     const idx = Number(event.target.id);
-    TodoItems.edit(event.target.value, idx);
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.edit(event.target.value, idx, todosArr);
   }
 
   clearAllCompleted = () => {

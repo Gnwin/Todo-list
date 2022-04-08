@@ -22,15 +22,14 @@ class TodoItems {
     return store;
   }
 
-  static edit = (description, id) => {
-    const todosArr = JSON.parse(localStorage.getItem('todos'));
-    for (let i = 0; i < todosArr.length; i += 1) {
+  static edit = (description, id, store) => {
+    for (let i = 0; i < store.length; i += 1) {
       if (i === id - 1) {
-        todosArr[i].description = description;
+        store[i].description = description;
       }
     }
-    this.todoitems = todosArr;
-    localStorage.setItem('todos', JSON.stringify(todosArr));
+    this.todoitems = store;
+    localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
   }
 
