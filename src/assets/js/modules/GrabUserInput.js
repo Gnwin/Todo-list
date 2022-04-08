@@ -50,7 +50,8 @@ class GrabUserInput {
   }
 
   clearAllCompleted = () => {
-    TodoItems.clearAll();
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.clearAll(todosArr);
   }
 
   completed = (ev) => {

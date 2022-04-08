@@ -33,13 +33,13 @@ class TodoItems {
     // document.location.reload(true);
   }
 
-  static clearAll = () => {
-    let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = todosArr.filter((todo) => todo.completed !== true);
-    todosArr = updateIndex(todosArr);
-    this.todoitems = todosArr;
-    localStorage.setItem('todos', JSON.stringify(todosArr));
+  static clearAll = (store) => {
+    store = store.filter((todo) => todo.completed !== true);
+    store = updateIndex(store);
+    this.todoitems = store;
+    localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
+    return store;
   }
 
   static complete = (e, store) => {
