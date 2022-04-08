@@ -30,7 +30,7 @@ class TodoItems {
     }
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
-    document.location.reload(true);
+    // document.location.reload(true);
   }
 
   static clearAll = () => {
@@ -42,24 +42,23 @@ class TodoItems {
     document.location.reload(true);
   }
 
-  static complete = (e) => {
-    const todosArr = JSON.parse(localStorage.getItem('todos'));
+  static complete = (e, store) => {
     if (e.target.checked === true) {
-      for (let i = 0; i < todosArr.length; i += 1) {
-        if (todosArr[i].index === Number(e.target.parentElement.children[1].id)) {
-          todosArr[i].completed = true;
+      for (let i = 0; i < store.length; i += 1) {
+        if (store[i].index === Number(e.target.parentElement.children[1].id)) {
+          store[i].completed = true;
           e.target.parentElement.children[1].style.textDecoration = 'line-through';
         }
       }
     } else {
-      for (let i = 0; i < todosArr.length; i += 1) {
-        if (todosArr[i].index === Number(e.target.parentElement.children[1].id)) {
-          todosArr[i].completed = false;
+      for (let i = 0; i < store.length; i += 1) {
+        if (store[i].index === Number(e.target.parentElement.children[1].id)) {
+          store[i].completed = false;
           e.target.parentElement.children[1].style.textDecoration = 'none';
         }
       }
     }
-    localStorage.setItem('todos', JSON.stringify(todosArr));
+    localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
   }
 }

@@ -54,7 +54,8 @@ class GrabUserInput {
   }
 
   completed = (ev) => {
-    TodoItems.complete(ev);
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.complete(ev, todosArr);
   }
 }
 
