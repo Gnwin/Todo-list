@@ -45,15 +45,18 @@ class GrabUserInput {
       return;
     }
     const idx = Number(event.target.id);
-    TodoItems.edit(event.target.value, idx);
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.edit(event.target.value, idx, todosArr);
   }
 
   clearAllCompleted = () => {
-    TodoItems.clearAll();
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.clearAll(todosArr);
   }
 
   completed = (ev) => {
-    TodoItems.complete(ev);
+    const todosArr = JSON.parse(localStorage.getItem('todos'));
+    TodoItems.complete(ev, todosArr);
   }
 }
 

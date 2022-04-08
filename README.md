@@ -8,7 +8,7 @@
 
 ## Testing with jest Screenshot
 
-<img src="./src/assets/images/Screenshot 2022-04-07 at 11.07.45 PM.png">
+<img src="./src/assets/images/Screenshot 2022-04-08 at 6.42.59 PM.png">
 
 ## Live Preview
 
@@ -27,9 +27,9 @@
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: `www.github.com/gnwin/Todo-list.git`
-- Run `git checkout test` to switch to develop branch
+- Run `git checkout test2` to switch to develop branch
 - Run `npm install` to install dependencies
-- Run `npm test addremove.test.js` to start the server
+- Run `npm test edit-update-clearall.test.js` to start the server
 
 
 ## Authors

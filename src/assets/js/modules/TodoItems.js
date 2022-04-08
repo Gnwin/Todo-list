@@ -9,7 +9,7 @@ class TodoItems {
     store.push(todoobj);
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
-    // document.location.reload(true);
+    document.location.reload(true);
     return true;
   }
 
@@ -18,49 +18,47 @@ class TodoItems {
     store = updateIndex(store);
     localStorage.setItem('todos', JSON.stringify(store));
     this.todoitems = store;
+    document.location.reload(true);
     return store;
-    // document.location.reload(true);
   }
 
-  static edit = (description, id) => {
-    const todosArr = JSON.parse(localStorage.getItem('todos'));
-    for (let i = 0; i < todosArr.length; i += 1) {
+  static edit = (description, id, store) => {
+    for (let i = 0; i < store.length; i += 1) {
       if (i === id - 1) {
-        todosArr[i].description = description;
+        store[i].description = description;
       }
     }
-    this.todoitems = todosArr;
-    localStorage.setItem('todos', JSON.stringify(todosArr));
+    this.todoitems = store;
+    localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
   }
 
-  static clearAll = () => {
-    let todosArr = JSON.parse(localStorage.getItem('todos'));
-    todosArr = todosArr.filter((todo) => todo.completed !== true);
-    todosArr = updateIndex(todosArr);
-    this.todoitems = todosArr;
-    localStorage.setItem('todos', JSON.stringify(todosArr));
+  static clearAll = (store) => {
+    store = store.filter((todo) => todo.completed !== true);
+    store = updateIndex(store);
+    this.todoitems = store;
+    localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
+    return store;
   }
 
-  static complete = (e) => {
-    const todosArr = JSON.parse(localStorage.getItem('todos'));
+  static complete = (e, store) => {
     if (e.target.checked === true) {
-      for (let i = 0; i < todosArr.length; i += 1) {
-        if (todosArr[i].index === Number(e.target.parentElement.children[1].id)) {
-          todosArr[i].completed = true;
+      for (let i = 0; i < store.length; i += 1) {
+        if (store[i].index === Number(e.target.parentElement.children[1].id)) {
+          store[i].completed = true;
           e.target.parentElement.children[1].style.textDecoration = 'line-through';
         }
       }
     } else {
-      for (let i = 0; i < todosArr.length; i += 1) {
-        if (todosArr[i].index === Number(e.target.parentElement.children[1].id)) {
-          todosArr[i].completed = false;
+      for (let i = 0; i < store.length; i += 1) {
+        if (store[i].index === Number(e.target.parentElement.children[1].id)) {
+          store[i].completed = false;
           e.target.parentElement.children[1].style.textDecoration = 'none';
         }
       }
     }
-    localStorage.setItem('todos', JSON.stringify(todosArr));
+    localStorage.setItem('todos', JSON.stringify(store));
     document.location.reload(true);
   }
 }
