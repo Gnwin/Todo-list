@@ -30,7 +30,7 @@ class TodoItems {
     }
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
-    // document.location.reload(true);
+    document.location.reload(true);
   }
 
   static clearAll = (store) => {
@@ -38,7 +38,7 @@ class TodoItems {
     store = updateIndex(store);
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
-    // document.location.reload(true);
+    document.location.reload(true);
     return store;
   }
 
