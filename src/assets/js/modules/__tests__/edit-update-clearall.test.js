@@ -2,10 +2,10 @@
  * @jest-environment jsdom
  */
 
- import todomarkup from '../TodoMarkup';
- import TodoItems from '../TodoItems';
+import todomarkup from '../TodoMarkup';
+import TodoItems from '../TodoItems';
  
- let store = [
+let store = [
   {
     description: 'laundry',
     completed: false,
@@ -23,40 +23,40 @@
   },
 ];
  
- document.body.innerHTML = '<div class=\'list-items\'></div>';
+document.body.innerHTML = '<div class=\'list-items\'></div>';
  
  // edit
- describe('edits an item\'s description', () => {
-   it('edits an item\'s description', () => {
-    let newdescription = 'play football';
-     TodoItems.edit(newdescription, store[1].index, store);
-     expect(store[1].description).toBe(newdescription);
-   });
- 
-   it('checking that new description is not empty', () => {
+describe('edits an item\'s description', () => {
+  it('edits an item\'s description', () => {
+  let newdescription = 'play football';
+    TodoItems.edit(newdescription, store[1].index, store);
+    expect(store[1].description).toBe(newdescription);
+  });
+
+  it('checking that new description is not empty', () => {
     let olddescription = store[1].description;
     let newdescription = '';
     if (newdescription === '') newdescription = olddescription;
-     TodoItems.edit(newdescription, store[1].index, store);
-     expect(newdescription).toBe(olddescription);
-   });
- 
-   it('checks if the description is updated in the DOM', () => {
-      let newdescription = 'read a book';
-      TodoItems.edit(newdescription, store[1].index, store);
-      const todoList = document.querySelector('.list-items');
-      let markup = '';
-      store.forEach((todo) => {
-        markup += todomarkup(todo);
-      });
-      todoList.innerHTML = markup;
-      const inputs = document.querySelectorAll('.list-title');
-      expect(inputs[1].value).toEqual(newdescription);
-   });
- });
+    TodoItems.edit(newdescription, store[1].index, store);
+    expect(newdescription).toBe(olddescription);
+  });
+
+  it('checks if the description is updated in the DOM', () => {
+    let newdescription = 'read a book';
+    TodoItems.edit(newdescription, store[1].index, store);
+    const todoList = document.querySelector('.list-items');
+    let markup = '';
+    store.forEach((todo) => {
+      markup += todomarkup(todo);
+    });
+    todoList.innerHTML = markup;
+    const inputs = document.querySelectorAll('.list-title');
+    expect(inputs[1].value).toEqual(newdescription);
+  });
+});
  
  // update
- describe('remove a new todoitem', () => { 
+describe('remove a new todoitem', () => { 
   it('check if the input type checkbox is updated', () => {
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     checkboxes[1].checked = true;
@@ -86,7 +86,7 @@
 
     expect(store[sampleStorageIndex-1].completed).toBe(true);
   });
- });
+});
 
 // clearall
  describe('clears all completed activities', () => {
