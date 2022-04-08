@@ -4,37 +4,37 @@
 
 import todomarkup from '../TodoMarkup';
 import TodoItems from '../TodoItems';
- 
-let store = [
+
+const store = [
   {
     description: 'laundry',
     completed: false,
-    index: 1
+    index: 1,
   },
   {
     description: 'read a book',
     completed: false,
-    index: 2
+    index: 2,
   },
-  { 
+  {
     description: 'study',
     completed: false,
-    index: 3
+    index: 3,
   },
 ];
- 
+
 document.body.innerHTML = '<div class=\'list-items\'></div>';
- 
- // edit
+
+// edit
 describe('edits an item\'s description', () => {
   it('edits an item\'s description', () => {
-  let newdescription = 'play football';
+    const newdescription = 'play football';
     TodoItems.edit(newdescription, store[1].index, store);
     expect(store[1].description).toBe(newdescription);
   });
 
   it('checking that new description is not empty', () => {
-    let olddescription = store[1].description;
+    const olddescription = store[1].description;
     let newdescription = '';
     if (newdescription === '') newdescription = olddescription;
     TodoItems.edit(newdescription, store[1].index, store);
@@ -42,7 +42,7 @@ describe('edits an item\'s description', () => {
   });
 
   it('checks if the description is updated in the DOM', () => {
-    let newdescription = 'read a book';
+    const newdescription = 'read a book';
     TodoItems.edit(newdescription, store[1].index, store);
     const todoList = document.querySelector('.list-items');
     let markup = '';
@@ -54,9 +54,9 @@ describe('edits an item\'s description', () => {
     expect(inputs[1].value).toEqual(newdescription);
   });
 });
- 
- // update
-describe('remove a new todoitem', () => { 
+
+// update
+describe('remove a new todoitem', () => {
   it('check if the input type checkbox is updated', () => {
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     checkboxes[1].checked = true;
@@ -67,9 +67,9 @@ describe('remove a new todoitem', () => {
     const checkboxes = document.querySelectorAll('.input[type="checkbox"]');
     const sampleStorageIndex = 1;
     checkboxes[sampleStorageIndex].checked = !checkboxes[sampleStorageIndex].checked;
-    //user has checked a todo task
+    // user has checked a todo task
     checkboxes[sampleStorageIndex].checked = !checkboxes[sampleStorageIndex].checked;
-    
+
     if (checkboxes[sampleStorageIndex].checked === true) {
       for (let i = 0; i < store.length; i += 1) {
         if (store[i].index === sampleStorageIndex) {
@@ -84,18 +84,18 @@ describe('remove a new todoitem', () => {
       }
     }
 
-    expect(store[sampleStorageIndex-1].completed).toBe(true);
+    expect(store[sampleStorageIndex - 1].completed).toBe(true);
   });
 });
 
 // clearall
- describe('clears all completed activities', () => {
+describe('clears all completed activities', () => {
   it('removes a new object from the store', () => {
     expect(TodoItems.clearAll(store)).not.toBe(store);
   });
 
   it('removes a todolist item from the DOM', () => {
-    let newStore = TodoItems.clearAll(store);
+    const newStore = TodoItems.clearAll(store);
     const todoList = document.querySelector('.list-items');
     let markup = '';
     newStore.forEach((todo) => {
