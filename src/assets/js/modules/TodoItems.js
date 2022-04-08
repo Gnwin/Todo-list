@@ -9,7 +9,7 @@ class TodoItems {
     store.push(todoobj);
     this.todoitems = store;
     localStorage.setItem('todos', JSON.stringify(store));
-    // document.location.reload(true);
+    document.location.reload(true);
     return true;
   }
 
@@ -18,8 +18,8 @@ class TodoItems {
     store = updateIndex(store);
     localStorage.setItem('todos', JSON.stringify(store));
     this.todoitems = store;
+    document.location.reload(true);
     return store;
-    // document.location.reload(true);
   }
 
   static edit = (description, id) => {
