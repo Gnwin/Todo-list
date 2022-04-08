@@ -27,7 +27,7 @@
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: `www.github.com/gnwin/Todo-list.git`
-- Run `git checkout test` to switch to develop branch
+- Run `git checkout test2` to switch to develop branch
 - Run `npm install` to install dependencies
 - Run `npm test edit-update-clearall.test.js` to start the server
 
